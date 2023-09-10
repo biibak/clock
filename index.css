@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+body{
+    background: url('night-sky-surreal-5120x3200-12658.png') no-repeat center;
+    background-size: cover;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .clock{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.404);
+    background: transparent;
+    backdrop-filter: blur(7px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span{
+    font-family: sans-serif;
+    color: #83e009;
+    position: absolute;
+    transform: rotate(calc(30deg * var(--d)));
+    inset: 12px; 
+    text-align: center;
+}
+
+span b{
+    position: absolute;
+    transform: rotate(calc(-30deg * var(--d)));
+}
+
+
+
+.clock::before{
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #83e009;
+    z-index: 1000;
+}
+
+.clock .hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.clock .hand i{
+    position: absolute;
+    width: 1px;
+    height: var(--heg);
+    background-color: var(--clr);
+}

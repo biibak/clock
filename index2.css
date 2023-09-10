@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+
+body{
+    background: url('night-sky-surreal-5120x3200-12658.png') no-repeat center;
+    background-size: cover;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .clock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 200px;
+    justify-content: space-between;
+}
+
+.container .clock .analogg{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.404);
+    background: transparent;
+    backdrop-filter: blur(7px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span{
+    font-family: sans-serif;
+    color: #83e009;
+    position: absolute;
+    transform: rotate(calc(30deg * var(--d)));
+    inset: 12px; 
+    text-align: center;
+}
+
+span b{
+    position: absolute;
+    transform: rotate(calc(-30deg * var(--d)));
+}
+
+
+
+.clock .analogg::before{
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #83e009;
+    z-index: 1000;
+}
+
+.clock .analogg .hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.clock .analogg .hand i{
+    position: absolute;
+    width: 1px;
+    height: var(--heg1);
+    background-color: var(--clr);
+}
+
+
+.clock .digitall{
+    height: 200px;
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.404);
+    background: transparent;
+    backdrop-filter: blur(7px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.digitall div{
+    font-size: 2em;
+    color: #83e009;
+    display: inline-block;
+    position: relative;
+    pointer-events: none;
+}
+
+.digitall div:after{
+    content: '';
+    width: 2px;
+    height: 120px;
+    position: absolute;
+    background-color: #0a3fec;
+    margin-left: 40px;
+    top: -40px;
+}
+
+
+.digitall div:last-child::after{
+    background-color: transparent;
+}
+
+
+@media (max-width:1250px){
+
+    .container .clock .analogg{
+        height: 200px;
+        width: 200px;
+       
+    }
+
+    .clock .analogg .hand i{
+        height: var(--heg2);
+    }
+
+
+    .clock .digitall{
+        height: 100px;
+        width: 300px;
+    }
+
+    .digitall div:after{
+        height: 80px;
+        top: -20px;
+    }
+}
+
+
+
+@media (max-width:910px){
+
+    
+    .container .clock{
+        width: 100%;
+        height: 100vh;
+        padding: 70px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container .clock .analogg{
+        height: 200px;
+        width: 200px;
+       
+    }
+
+    .clock .analogg .hand i{
+        height: var(--heg2);
+    }
+
+
+    .clock .digitall{
+        height: 100px;
+        width: 300px;
+    }
+
+    .digitall div:after{
+        height: 80px;
+        top: -20px;
+    }
+}
